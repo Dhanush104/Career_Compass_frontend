@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Test</title>
+</head>
+<body>
+    <h1 style="color: red; font-size: 48px;">🚨 SIMPLE HTML TEST</h1>
+    <p style="font-size: 24px;">If you can see this, the server is working!</p>
+    <p>Time: <span id="time"></span></p>
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleTimeString();
+        console.log("Simple HTML test is working!");
+    </script>
+</body>
+</html>
