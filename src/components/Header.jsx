@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Menu,
   X,
@@ -15,7 +16,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Header = ({ onLoginClick }) => {
+const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('theme');
@@ -99,15 +100,16 @@ const Header = ({ onLoginClick }) => {
         </motion.button>
 
         {/* Log In Button */}
-        <motion.button
-          onClick={onLoginClick}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="hidden md:flex items-center space-x-2 text-sm px-6 py-3 rounded-full shadow-lg text-white font-semibold bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 transition-all duration-300"
-        >
-          <User size={16} />
-          <span>Log In</span>
-        </motion.button>
+        <Link to="/login">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:flex items-center space-x-2 text-sm px-6 py-3 rounded-full shadow-lg text-white font-semibold bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 transition-all duration-300"
+          >
+            <User size={16} />
+            <span>Log In</span>
+          </motion.button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -142,12 +144,13 @@ const Header = ({ onLoginClick }) => {
                 <span className="text-lg font-medium">{item.label}</span>
               </a>
             ))}
-            <button
-              onClick={onLoginClick}
-              className="w-full text-center text-base px-6 py-3 rounded-full shadow-md text-white font-semibold bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 transition-all duration-300 mt-4"
-            >
-              Log In
-            </button>
+            <Link to="/login" onClick={() => setMenuOpen(false)}>
+              <div
+                className="w-full text-center text-base px-6 py-3 rounded-full shadow-md text-white font-semibold bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 transition-all duration-300 mt-4"
+              >
+                Log In
+              </div>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

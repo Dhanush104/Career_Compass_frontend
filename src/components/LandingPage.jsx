@@ -1,6 +1,71 @@
+import React from 'react';
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Target, TrendingUp, Users, Award, Zap, Globe, Cpu } from "lucide-react";
+import Header from "./Header";
+import Footer from "./Footer";
 
-// ... existing imports
+const steps = [
+  {
+    icon: <Target />,
+    title: "Set Your Goals",
+    desc: "Define your career aspirations and let our AI map out the perfect path for you."
+  },
+  {
+    icon: <TrendingUp />,
+    title: "Track Progress",
+    desc: "Monitor your growth with real-time analytics and milestone tracking."
+  },
+  {
+    icon: <Users />,
+    title: "Connect & Learn",
+    desc: "Join a community of learners and get mentorship from industry experts."
+  }
+];
+
+const testimonials = [
+  {
+    name: "Alex Johnson",
+    role: "Software Engineer",
+    feedback: "Career Compass helped me transition from a non-tech background to a full-stack developer in just 6 months!",
+    avatar: "https://i.pravatar.cc/150?u=alex"
+  },
+  {
+    name: "Sarah Williams",
+    role: "Product Manager",
+    feedback: "The roadmap feature is a game-changer. It kept me focused and motivated throughout my learning journey.",
+    avatar: "https://i.pravatar.cc/150?u=sarah"
+  },
+  {
+    name: "Michael Chen",
+    role: "Data Scientist",
+    feedback: "I love the gamified elements! Earning XP and badges makes learning feel like an adventure.",
+    avatar: "https://i.pravatar.cc/150?u=michael"
+  }
+];
+
+const futureScopes = [
+  {
+    icon: <Award />,
+    title: "Certification Hub",
+    description: "Earn verified certificates for completing courses and challenges."
+  },
+  {
+    icon: <Zap />,
+    title: "AI Mock Interviews",
+    description: "Practice with AI-driven interview simulations and get instant feedback."
+  },
+  {
+    icon: <Globe />,
+    title: "Global Job Board",
+    description: "Access exclusive job openings from top companies worldwide."
+  },
+  {
+    icon: <Cpu />,
+    title: "Skill Analysis",
+    description: "Deep dive into your code to analyze and improve your coding style."
+  }
+];
 
 const LandingPage = () => {
   return (
