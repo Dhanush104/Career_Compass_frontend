@@ -1218,7 +1218,6 @@ const Dashboard = ({ onLogout, user }) => {
                             <NavButton tabName="resumeBuilder" icon={<FileText size={20} />} label="Resume Builder" />
                             <NavButton tabName="codingChallenges" icon={<Code size={20} />} label="Coding Challenges" />
                             <NavButton tabName="goalTracker" icon={<Target size={20} />} label="Goal Tracker" />
-                            <NavButton tabName="analytics" icon={<BarChart3 size={20} />} label="Analytics" />
                         </ul>
                         <p className="px-3 text-xs font-semibold text-neutral-400 dark:text-neutral-500 uppercase tracking-wider mt-6 mb-2">Discover</p>
                         <ul className="space-y-2">
